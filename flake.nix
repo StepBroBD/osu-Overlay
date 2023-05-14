@@ -29,7 +29,7 @@
             (self: super: {
               osu-lazer-bin = super.osu-lazer-bin.overrideAttrs (old: {
                 src =
-                  if builtins.contains "linux" system then
+                  if nixpkgs.lib.hasInfix "linux" system then
                     builtins.fetchurl (osu)
                   else
                     builtins.fetchzip (osu);
