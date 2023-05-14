@@ -18,17 +18,21 @@
     ]
       (system:
       let
+        osu = {
+          url = import (./systems + "/${system}/url.nix");
+          sha256 = import (./systems + "/${system}/sha256.nix");
+        };
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
           overlays = [
             (self: super: {
               osu-lazer-bin = super.osu-lazer-bin.overrideAttrs (old: {
-                pname = "osu-lazer-bin";
-                src = builtins.fetchurl {
-                  url = import (./systems + "/${system}/url.nix");
-                  sha256 = import (./systems + "/${system}/sha256.nix");
-                };
+                src =
+                  if builtins.contains "linux" system then
+                    builtins.fetchurl (osu)
+                  else
+                    builtins.fetchzip (osu);
               });
             })
           ];
