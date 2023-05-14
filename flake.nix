@@ -30,9 +30,9 @@
               osu-lazer-bin = super.osu-lazer-bin.overrideAttrs (old: {
                 src =
                   if nixpkgs.lib.hasInfix "linux" system then
-                    fetchurl (osu)
+                    builtins.fetchurl (osu)
                   else
-                    fetchzip (osu);
+                    nixpkgs.pkgs.fetchzip (osu);
               });
             })
           ];
