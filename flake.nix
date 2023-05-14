@@ -32,7 +32,7 @@
                   if nixpkgs.lib.hasInfix "linux" system then
                     builtins.fetchurl (osu)
                   else
-                    pkgs.fetchzip (osu);
+                    pkgs.fetchzip (osu // { stripRoot = false; });
               });
             })
           ];
