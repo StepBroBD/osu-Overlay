@@ -1,1 +1,1 @@
-""
+"https://github.com/ppy/osu/releases/download/2023.513.0/osu.app.Intel.zip"

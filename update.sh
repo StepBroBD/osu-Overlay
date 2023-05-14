@@ -3,7 +3,7 @@
 
 set -eo pipefail
 
-old_version="0.0.0"
+old_version="2023.513.0"
 
 new_version="$(curl -s "https://api.github.com/repos/ppy/osu/releases?per_page=1" | jq -r ".[0].name")"
 if [[ "$new_version" == "$old_version" ]]; then
