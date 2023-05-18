@@ -20,4 +20,4 @@ jobs:
         with:
           name: stepbrobd
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - run: nix build
+      - run: nix build && nix-store --verify --repair --check-contents
