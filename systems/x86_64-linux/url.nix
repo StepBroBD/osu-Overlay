@@ -1,1 +1,1 @@
-"https://github.com/ppy/osu/releases/download/2023.610.0/osu.AppImage"
+"https://github.com/ppy/osu/releases/download/2023.614.1/osu.AppImage"
