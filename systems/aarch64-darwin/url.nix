@@ -1,1 +1,1 @@
-"https://github.com/ppy/osu/releases/download/2023.617.0/osu.app.Apple.Silicon.zip"
+"https://github.com/ppy/osu/releases/download/2023.621.0/osu.app.Apple.Silicon.zip"
